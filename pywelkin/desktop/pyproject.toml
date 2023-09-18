@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "desktop"
+version = "0.1.0"
+description = ""
+authors = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+maintainers = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+license = "LGPL-2.1-only"
+readme = "README.org"
+repository = "https://github.com/astral-bear/pywelkin/pywelkin/desktop"
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

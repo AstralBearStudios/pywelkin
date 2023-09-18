@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "pywelkin"
+version = "0.1.0"
+description = "Python implementaiton of Welkin, a personal information manager."
+authors = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+maintainers = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+license = "LGPL-2.1-only"
+readme = "README.org"
+repository = "https://github.com/astral-bear/pywelkin"
+keywords = ["graph", "organizer"]
+packages = [
+    {include = "core"},
+    {include = "cli"},
+    {include = "gui"},
+    {include = "plugins"},
+    {include = "desktop"},
+    {include = "ios"},
+    {include = "android"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

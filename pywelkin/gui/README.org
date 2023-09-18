@@ -1,0 +1,10 @@
+#+title: pywelkin.desktop
+#+author: Oscar Bender-Stone
+#+date: <2023-09-17 Sun>
+#+startup: nofold
+
+This provides the key GUI libraries for Welkin.
+
+* License
+
+This subpackage is licensed under: SPDX-LGPL-2.1.-or-later.

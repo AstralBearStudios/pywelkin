@@ -1,0 +1,21 @@
+#+title: PyWelkin
+#+author: Oscar Bender-Stone
+#+date: <2023-09-17 Sun>
+#+startup: nofold
+
+️*⚠ Warning: This repository is a WIP. This project is in its early stages and does not have any code. Please wait to submit any issues, and stay tuned for updates.*
+
+Welcome to PyWelkin, the official python implementation of [[https://github.com/astral-bear/welkin][Welkin]]. This package consists of six different subpackages.
+
+(Graph of Subpackage Dependencies: TBD
+
+/Core is At The top; there is an arrow to cli and gui; and there are arrows from gui to android, desktop, and ios/)
+
+* Installation
+/Pip/pipx/poetry instructions: TBD/
+
+* License
+This package has two licenses in its subpackages:
+- SPDX-MIT: core, cli
+- SPDX-LGPL-2.1-or-later: android, desktop, gui, ios
+See the files in each subpackage for specific licensing and copyright information. For the license files, see the LICENSES folder.

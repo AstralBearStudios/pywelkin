@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "core"
+version = "0.1.0"
+description = ""
+authors = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+maintainers = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+license = "MIT"
+readme = "README.org"
+repository = "https://github.com/astral-bear/pywelkin"
+keywords = ["graph", "organizer", "library"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

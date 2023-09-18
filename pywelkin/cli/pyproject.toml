@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "cli"
+version = "0.1.0"
+description = "CLI tool for the pywelkin core library."
+authors = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+maintainers = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+license = "MIT"
+readme = "README.org"
+repository = "https://github.com/astral-bear/pywelkin/cli"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

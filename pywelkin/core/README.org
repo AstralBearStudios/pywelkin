@@ -1,0 +1,10 @@
+#+title: pywelkin.core
+#+author: Oscar Bender-Stone
+#+date: <2023-09-17 Sun>
+#+startup: nofold
+
+This provides the core logic behind Weklin, providing a modular API that can be used in other applications.
+
+* License
+
+This subpackage is licensed under: SPDX-MIT.
