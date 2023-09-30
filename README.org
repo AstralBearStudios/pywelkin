@@ -17,5 +17,5 @@ Welcome to PyWelkin, the official python implementation of [[https://github.com/
 * License
 This package has two licenses in its subpackages:
 - SPDX-MIT: core, cli
-- SPDX-LGPL-2.1-or-later: android, desktop, gui, ios
+- SPDX-LGPL-3.0-or-later: android, desktop, gui, ios
 See the files in each subpackage for specific licensing and copyright information. For the license files, see the LICENSES folder.

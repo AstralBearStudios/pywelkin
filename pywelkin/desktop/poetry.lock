@@ -17,6 +17,23 @@ type = "directory"
 url = "../core"
 
 [[package]]
+name = "gui"
+version = "0.1.0"
+description = "GUI runtime and MVC base for PyWelkin"
+optional = false
+python-versions = ">=3.8,<3.12"
+files = []
+develop = false
+
+[package.dependencies]
+core = {path = "../core"}
+pyside6-essentials = "^6.5.2"
+
+[package.source]
+type = "directory"
+url = "../gui"
+
+[[package]]
 name = "lark"
 version = "1.1.7"
 description = "a modern parsing library"
@@ -69,4 +86,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.12"
-content-hash = "839c5f18e1f38e7ff8622486c8a000f64215e464f6a390a92f73c8e8cb34f559"
+content-hash = "ede75a2f2f036d338d648055a89936b30b09075027b517d4a102eb4ff7d05ea8"

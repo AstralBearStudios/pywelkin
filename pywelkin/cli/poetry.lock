@@ -28,15 +28,35 @@ files = [
 [[package]]
 name = "core"
 version = "0.1.0"
-description = ""
+description = "Core syntax and semantic analysis library for PyWelkin"
 optional = false
-python-versions = "^3.11"
+python-versions = ">=3.8,<3.12"
 files = []
 develop = false
+
+[package.dependencies]
+lark = "^1.1.7"
 
 [package.source]
 type = "directory"
 url = "../core"
+
+[[package]]
+name = "lark"
+version = "1.1.7"
+description = "a modern parsing library"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "lark-1.1.7-py3-none-any.whl", hash = "sha256:9e5dc5bbf93fa1840083707285262514a0ef8a6613874af7ea1cec60468d6e92"},
+    {file = "lark-1.1.7.tar.gz", hash = "sha256:be7437bf1f37ab08b355f29ff2571d77d777113d0a8c4352b0c513dced6c5a1e"},
+]
+
+[package.extras]
+atomic-cache = ["atomicwrites"]
+interegular = ["interegular (>=0.3.1,<0.4.0)"]
+nearley = ["js2py"]
+regex = ["regex"]
 
 [[package]]
 name = "typer"
@@ -72,5 +92,5 @@ files = [
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.11"
-content-hash = "f520f74e397548e5691340598399daecf1d43edeafdc173d12c75f255aa09aa9"
+python-versions = ">=3.8,<3.12"
+content-hash = "2e920553a407c119442985f3ba9e4f6dd92d966522aa5f2f873e069ee1f54b0d"

@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "core"
 version = "0.1.0"
-description = ""
+description = "Core syntax and semantic analysis library for PyWelkin"
 authors = [
     "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
 ]
@@ -14,7 +14,8 @@ repository = "https://github.com/astral-bear/pywelkin"
 keywords = ["graph", "organizer", "library"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.8,<3.12"
+lark = "^1.1.7"
 
 
 [build-system]

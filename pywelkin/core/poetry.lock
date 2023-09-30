@@ -19,5 +19,5 @@ regex = ["regex"]
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.11"
-content-hash = "a4648260ea7569314f0e267691040c0a707870116f7642e6e3d25a4d73a49012"
+python-versions = ">=3.8,<3.12"
+content-hash = "1dff6f6d670f2df666bddb7efbaaa1b358cc38888d3df604c1a803b9d31c3a28"
