@@ -32,7 +32,7 @@ description = "Core syntax and semantic analysis library for PyWelkin"
 optional = false
 python-versions = ">=3.8,<3.12"
 files = []
-develop = false
+develop = true
 
 [package.dependencies]
 lark = "^1.1.7"
@@ -93,4 +93,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.12"
-content-hash = "2e920553a407c119442985f3ba9e4f6dd92d966522aa5f2f873e069ee1f54b0d"
+content-hash = "a487e357340d5d67cf4476ba0da0e1df83cdbf125712b2647a899ec5f127ffee"

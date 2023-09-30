@@ -8,7 +8,7 @@ authors = [
 maintainers = [
     "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
 ]
-license = "LGPL-2.1-only"
+license = "LGPL-3.0-or-later"
 readme = "README.org"
 repository = "https://github.com/astral-bear/pywelkin/pywelkin/android"
 keywords = ["graph", "organizer", "android"]
@@ -16,6 +16,7 @@ keywords = ["graph", "organizer", "android"]
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.12"
+gui = {path = "../gui", develop = true}
 
 
 [build-system]

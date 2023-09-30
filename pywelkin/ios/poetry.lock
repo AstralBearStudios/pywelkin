@@ -7,7 +7,7 @@ description = "Core syntax and semantic analysis library for PyWelkin"
 optional = false
 python-versions = ">=3.8,<3.12"
 files = []
-develop = false
+develop = true
 
 [package.dependencies]
 lark = "^1.1.7"
@@ -23,10 +23,10 @@ description = "GUI runtime and MVC base for PyWelkin"
 optional = false
 python-versions = ">=3.8,<3.12"
 files = []
-develop = false
+develop = true
 
 [package.dependencies]
-core = {path = "../core"}
+core = {path = "../core", develop = true}
 pyside6-essentials = "^6.5.2"
 
 [package.source]
@@ -2812,4 +2812,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.12"
-content-hash = "f269c4a9bb292fafc0b81f94f038a787e8a7bb46730567ed68b5d0566871f607"
+content-hash = "9cbcc6591bec05b652a92b386cdc42ba617197d3509c8cf80d23598cca70c0c1"
