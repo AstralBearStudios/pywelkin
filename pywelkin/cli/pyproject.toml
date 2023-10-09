@@ -8,7 +8,7 @@ authors = [
 maintainers = [
     "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
 ]
-license = "MIT"
+license = "Apache-2.0"
 readme = "README.org"
 repository = "https://github.com/astral-bear/pywelkin/cli"
 

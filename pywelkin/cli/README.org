@@ -1,10 +1,11 @@
 #+title: pywelkin.cli
 #+author: Oscar Bender-Stone
-#+date: <2023-09-17 Sun>
 #+startup: nofold
 
 This provides a CLI utility for Welkin files.
 
 * License
 
-This subpackage is licensed under: SPDX-MIT.
+Copyright (c) 2023 Oscar Bender-Stone and pywelkin.cli contributors.
+
+This subpackage is licensed under: SPDX-Apache-2.0-WITH-LLVM-exception.
