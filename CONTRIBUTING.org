@@ -1,0 +1,17 @@
+# SPDX-FileCopyRightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
+# SPDX-License-Identifier: CC-BY-4.0
+#+title: Contributing Guidelines
+
+️⚠ ***Warning: The Contributing Guidelines is a WIP. This project is in its early stages and does not have any code. Please wait to raise pull requests, and stay tuned for updates.**
+
+Thank you for making a contribution to Welkin. This document explains the steps to have your changes reviewed, tested, and merged. If you have any questions about this document or contributing in general, see: TBD.
+
+Before you request a merge request, please see the: TBD
+# TODO Determine Full Contributing Guidelines
+* Copyright and Licensing
+- You may apply a license that is compatible with and provides all of the rights of the license(s) in the specific subpackage:
+  - core, cli: Apache-2.0-WITH-LLVM-exception (permissive rights),
+  - gui, android, ios, desktop: LGPL-3.0-or-later (copyleft rights).
+- Whenever you create a new file, please follow the [[https://reuse.software/spec/][REUSE specification, version 3.0.]] In particular, at the top of the file, you should add a SPDX-FileCopyRightText and SDPX-License-Identifier in comments.
+- If you are /changing/ or /adding/ to a file, add your own SPDX-FileCopyRightText tag below prexisting ones (/but/ above SPDX-License-Identifier). In case you would like to use a different license for a section YOU create, *you must add comments between your contributions, with the SPDX-FileCopyRightText and -License-Identifier tags*
+- If you add a new license, be sure to add it under LICENSES or raise an issue.
