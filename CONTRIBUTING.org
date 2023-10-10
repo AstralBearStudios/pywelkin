@@ -13,5 +13,5 @@ Before you request a merge request, please see the: TBD
   - core, cli: Apache-2.0-WITH-LLVM-exception (permissive rights),
   - gui, android, ios, desktop: LGPL-3.0-or-later (copyleft rights).
 - Whenever you create a new file, please follow the [[https://reuse.software/spec/][REUSE specification, version 3.0.]] In particular, at the top of the file, you should add a SPDX-FileCopyRightText and SDPX-License-Identifier in comments.
-- If you are /changing/ or /adding/ to a file, add your own SPDX-FileCopyRightText tag below prexisting ones (/but/ above SPDX-License-Identifier). In case you would like to use a different license for a section YOU create, *you must add comments between your contributions, with the SPDX-FileCopyRightText and -License-Identifier tags*
+- If you are /changing/ or /adding/ to a file, add your own SPDX-FileCopyRightText tag below prexisting ones (/but/ above SPDX-License-Identifier). In case you would like to use a different license for a section YOU create, *you must add comments between your contributions, with the SPDX-FileCopyRightText and SPDX-License-Identifier tags*
 - If you add a new license, be sure to add it under LICENSES or raise an issue.
