@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gui"
-version = "0.1.0"
+version = "0.2.0"
 description = "GUI runtime and MVC base for PyWelkin"
 authors = [
     "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
