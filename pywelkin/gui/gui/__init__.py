@@ -13,5 +13,9 @@ if __name__ == "__main__":
     splash.run_splash()
     app.processEvents()
 
-window.display()
+# window.display()
+window = QtWidgets.QMainWindow()
+window.showMaximized()
+window.setWindowTitle("Welkin Studio")
+window.show()
 sys.exit(app.exec())

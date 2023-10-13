@@ -3,6 +3,8 @@
 #
 from PySide6 import QtWidgets
 
+# TODO: subclass QMainWindow as needed
+
 
 def display():
     """Displays the main window"""
