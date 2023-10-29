@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
+# SPDX-License-Identifier: Apache-2.0-WITH-LLVM-exception
+# Encoding: minimal + vertical
+
+plot {
+
+     hare {
+          sleeps -> stop
+     }
+
+     tortoise {
+         keeps_going -> doesn't_stop
+     }
+
+
+     tortoise --beats-> hare
+                 |
+            reason { hare -> sleeps }
+
+}

@@ -1,0 +1,36 @@
+// SPDX-FileCopyrightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+// TODO: figure out the best way to resolve ambiguities in this file! Without that, it will be hard
+// to determine the final version of the standard grammar!
+
+term: (rule | directive
+        | graph | connection
+        | list | tuple
+        | atom)*
+directive: atomic_directives
+atomic_directives: "@import" graph -> import
+| "@export" atom -> export
+| "@file" string -> file
+| "@interface" graph -> interface
+| "@self" -> self
+| "@eval" term -> eval
+rule: "=>"
+operator: term "(" term ("," term)* ","? ")" | term "(" term ("," term)* ","? ")"  term
+list: "[" term ("," term)* ","? "]"
+tuple: "(" term ("," term)* ","? ")"
+math: num "+" num | num "*" num
+    | num "-" num | num "/" num
+    | num ">" num | num "<" num
+    | num ">=" num | num "<=" num
+logic: term "&&" term
+    | term "||" term
+    | "~" term
+logo: term "&&" term
+
+%import .base.graph -> graph
+%import .base.connection -> connection
+%import .base.atom -> atom
+%import .base.string -> string
+%import .base.num -> num
+%import common.WS
+%ignore WS
