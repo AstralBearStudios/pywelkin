@@ -2,7 +2,7 @@
 
 [[package]]
 name = "core"
-version = "0.1.0"
+version = "0.2.0"
 description = "Core syntax and semantic analysis library for PyWelkin"
 optional = false
 python-versions = ">=3.8,<3.12"

@@ -8,4 +8,4 @@ This provides the core logic behind Weklin, providing a modular API that can be 
 * License
 Copyright (c) 2023 Oscar Bender-Stone and pywelkin.core contributors.
 
-This subpackage is licensed under: SPDX-MIT.
+This subpackage is licensed under: SPDX-Apache-2.0-WITH-LLVM-exception.

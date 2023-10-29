@@ -8,7 +8,7 @@ authors = [
 maintainers = [
     "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
 ]
-license = "LGPL-2.1-only"
+license = "LGPL-3.0-or-later"
 readme = "README.org"
 repository = "https://github.com/astral-bear/pywelkin"
 keywords = ["graph", "organizer"]
@@ -16,16 +16,20 @@ packages = [
     {include = "core"},
     {include = "cli"},
     {include = "gui"},
-    {include = "plugins"},
     {include = "desktop"},
     {include = "ios"},
     {include = "android"},
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.8, <3.12"
+python = ">=3.9, <3.12"
+sphinx = {version = "^7.2.6"}
+furo = "^2023.9.10"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.extras]
+docs = ["sphinx", "furo"]
