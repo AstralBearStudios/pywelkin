@@ -1,7 +1,7 @@
-# NOTE: each # denotes a temporary comment and is an extension of standard Welkkin. This would NOT appear in a purely
+# NOTE: each # denotes a temporary comment and is an extension of standard Welkin. This would NOT appear in a purely
 # base welkin file; strings would be used for comments instead.
 # SPDX-FileCopyrightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
-# SPDX-License-Identifier: Apache-2.0-WITH-LLVM-exception
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
 @import @grammar
 

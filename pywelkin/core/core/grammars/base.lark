@@ -1,33 +1,20 @@
 // SPDX-FileCopyrightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
-// SPDX-License-Identifier: Apache-2.0-WITH-LLVM-exception
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
-start: term
-term: graph | connection | atom
-graph: atom? "{" term "}"
-connection: term connector term
-connector.1: "-" term "-" -> edge
-    | "-" term ">" -> right_arrow
-    | "<" term "-" -> left_arrow
-atom: ident | num | string
+start: term*
+term: graph | connections | unit ","?
+graph: unit? "{" term* "}"
+connections: term (connector term)+
+connector: "-" term? "-" -> edge
+    | "-" term? "->" -> right_arrow
+    | "<-" term? "-" -> left_arrow
+unit: ident | string | num
 ident: WORD
-num: NUMBER
 string: STRING
+num: NUMBER
 
 %import common.WORD
-%import common.ESCAPED_STRING -> STRING
 %import common.NUMBER
+%import common.ESCAPED_STRING -> STRING
 %import common.WS -> WHITE_SPACE
 %ignore WHITE_SPACE
-
-// calculations {
-//
-// (v > 4 - 4)
-//  4 + 4 = 8
-//
-//. 2 - 3 > -10
-//
-//. (2 - 3) > -10
-//
-//
-//
-//}

@@ -29,6 +29,7 @@ class Parser:
 
     parser: Lark
     lexer: Lexer
+    error_handler: Optional[ErrorHandler]
     transformer: Optional[Transformer]
     strict: bool
     lalr: bool
@@ -37,7 +38,7 @@ class Parser:
     def __init__(
         self,
         grammar: str,
-        tree_class: Tree,
+        tree_class: Optional[Tree] = None,
         error_handler: Optional[ErrorHandler] = None,
         transformer: Optional[Transformer] = None,
         start: str = "term",
@@ -51,25 +52,30 @@ class Parser:
         self.lalr = lalr
         self.cache = cache
 
+        if self.lalr:
+            self.error_handler = error_handler
+
         inline_transformer = transformer if lalr else None
 
-        self.parser = Lark(
-            grammar=grammar,
-            on_error=error_handler,
+        self.parser = Lark.open(
+            grammar_filename=grammar,
+            rel_to=__file__,
+            parser="lalr",
             start=start,
             strict=self.strict,
             debug=self.debug,
-            propogate_positions=True,
+            propagate_positions=True,
             regex=True,
             transformer=inline_transformer,
             tree_class=tree_class,
         )
 
     def parse(self, input: str):
-        tree = self.parser.parse(input)
+        if self.lalr and self.error_handler:
+            on_error_function = self.error_handler.run
+        else:
+            on_error_function = None
+        tree = self.parser.parse(input, on_error=on_error_function)
         if not self.lalr and self.transformer:
             tree = self.transformer.transform(tree)
         return tree
-
-    def parse_interactive(self, input: str):
-        self.parser.parse_interactive(input)

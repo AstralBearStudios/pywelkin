@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "core"
-version = "0.3.0"
+version = "0.4.0"
 description = "Core syntax and interpreter library for PyWelkin"
 authors = [
     "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
@@ -17,6 +17,8 @@ keywords = ["graph", "organizer", "library"]
 python = ">=3.8,<3.12"
 lark = "^1.1.7"
 path = "^16.7.1"
+regex = "^2023.10.3"
+interegular = "^0.3.2"
 
 
 [tool.poetry.group.dev.dependencies]

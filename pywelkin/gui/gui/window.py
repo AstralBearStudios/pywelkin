@@ -1,15 +1,14 @@
 # SPDX-FileCopyrightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
-# SPDX-License-Identifier: LPGL-3.0-or-later
+# SPDX-License-Identifier: LGPL-3.0-or-later
 #
-from PySide6 import QtWidgets
+
+from PySide6.QtWidgets import QMainWindow
 
 # TODO: subclass QMainWindow as needed
 
 
-def display():
-    """Displays the main window"""
-
-    window = QtWidgets.QMainWindow()
-    window.showMaximized()
-    window.setWindowTitle("Welkin Studio")
-    window.show()
+class MainWindow(QMainWindow):
+    def __init__(self, parent=None):
+        super(MainWindow, self).__init__(parent)
+        self.showMaximized()
+        self.setWindowTitle("Welkin Studio")

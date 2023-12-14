@@ -6,7 +6,7 @@ from core.base import Recorder
 
 # Expected parse: Graph[A], Graph[Connection[A, B]], Graph[Connection[A, B], Connection[B, C], Connection[D, E]]
 
-recorder = Recorder(strict=False)
+recorder = Recorder(strict=True)
 
 
 def test_input_trees():
@@ -20,3 +20,4 @@ def test_input_trees():
 
 
 test_input_trees()
+(

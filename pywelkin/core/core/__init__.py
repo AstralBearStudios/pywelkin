@@ -13,7 +13,7 @@
 # - Figure out how to best bootstrap new features (e.g., direct interface to the operating system)
 
 
-from .interpreter import Interpreter
+from .standard import Interpreter
 from .base import Recorder
 
 from .parser import Parser

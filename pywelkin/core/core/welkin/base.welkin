@@ -1,7 +1,7 @@
 # NOTE: each # denotes a temporary comment and is an extension of standard Welkkin. This would NOT appear in a purely
 # base welkin file; strings would be used for comments instead.
 # SPDX-FileCopyrightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
-# SPDX-License-Identifier: Apache-2.0-WITH-LLVM-exception
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 # TODO: decide whether to fully bootstrap via lark Welkin OR to still include base.lark
 # TODO: do we need a mechanism for and/or? I want to see if there is a way to do it with graphs (represeenting combinations) alone
 # TODO: answering the question above, decide on a suitable semantics for graphs in the generated AST. In the version below, a graph is a collection of possibilites. Any subset of them can happen. In order for all of them to occur, there are connections between the terms (using symmetric connections for symmetry of and)

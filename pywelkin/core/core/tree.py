@@ -6,12 +6,7 @@ from typing import Self, List, Union, Tuple
 
 class InformationTree:
     """The Welkin Information Graph (WIG) data structure that can be stored and traversed. This does NOT contain any
-    additional instructions on how to traverse the tree. For direct execution, see interpreter.ExecutableTree
+    additional instructions on how to traverse the tree.
     """
 
     node: List[Self]
-    pass
-
-
-class ExecutableTree(InformationTree):
-    """An InformationTree that contains valid instructions for the interpreter"""

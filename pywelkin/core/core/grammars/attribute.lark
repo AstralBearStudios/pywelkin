@@ -1,0 +1,25 @@
+// SPDX-FileCopyrightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+// TODO: figure out the best way to resolve ambiguities in this file! Without that, it will be hard
+// to determine the final version of the standard grammar!
+
+start: term*
+term: rule | attribute
+        | graph | connection
+        | list | tuple | operator
+        | unit
+rule: "=>"
+attribute: "@import" string -> import
+| "@file" string -> file
+| "@interfack" graph -> interface // For arbitrary scripts
+operator: term tuple | term tuple term
+list: "[" _series{term} "]"
+tuple: "(" _series{term} ")"
+_series{x}: x ("," x) (",")?
+
+%import .base.graph -> graph
+%import .base.connection -> connection
+%import .base.unit-> unit
+%import .base.string-> string
+%import common.WS
+%ignore WS
