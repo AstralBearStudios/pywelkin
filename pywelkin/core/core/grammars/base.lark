@@ -1,20 +1,36 @@
-// SPDX-FileCopyrightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
-// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+#  SPDX-FileCopyrightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
+#  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
-start: term*
-term: graph | connections | unit ","?
-graph: unit? "{" term* "}"
-connections: term (connector term)+
-connector: "-" term? "-" -> edge
-    | "-" term? "->" -> right_arrow
-    | "<-" term? "-" -> left_arrow
-unit: ident | string | num
-ident: WORD
-string: STRING
-num: NUMBER
+?start: series+
+?series: term ("," term)*
+?term: connections | alias | vertex
+?graph: (member "{" | "_{") series* "}"
+?connections: vertex (connector vertex)+
+?connector: "-" vertex? "-" -> edge
+    | "-" vertex? "->" -> right_arrow
+    | "<-" vertex? "-" -> left_arrow
+alias: vertex ":=" vertex
+?vertex: graph | member
 
-%import common.WORD
+# We need to ensure there is no space between dots and units
+# This issue (https://github.com/lark-parser/lark/discussions/934)
+# provides a solution: concatenate terminals together
+# in a new terminal
+member: DOTS (IDENT | STRING | _HASH NUMBER) ELEMENT* -> relative_member
+      | UNIT ELEMENT* -> absolute_member
+ELEMENT: _DOT (IDENT| STRING) | _HASH NUMBER
+UNIT: IDENT | STRING | NUMBER
+# Currently: DOT and HASH combines with unit label;
+# Needs two regexes in transformer
+DOTS: _DOT+
+_DOT: "."
+_HASH: "#"
+IDENT: WORD
+
+STRING: "\"" _STRING_ESC_INNER "\"" | "'" _STRING_ESC_INNER "'"
+
+%import common.CNAME -> WORD
 %import common.NUMBER
-%import common.ESCAPED_STRING -> STRING
-%import common.WS -> WHITE_SPACE
-%ignore WHITE_SPACE
+%import common.WS -> _WHITE_SPACE
+%import common._STRING_ESC_INNER -> _STRING_ESC_INNER
+%ignore _WHITE_SPACE

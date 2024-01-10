@@ -1,27 +1,18 @@
-# SPDX-FileCopyrightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
-# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+#  SPDX-FileCopyrightText: 2024 Oscar Bender-Stone <oscarbenderstone@gmail.com>
+#  SPDX-License-Identifier: Apache-2.0 WITH LLVM Exception
 
-from typing import Protocol, Optional
+from typing import Protocol, Optional, Dict, Callable
 
-from lark.lark import Lark
+from lark.lark import Lark, Token
 from lark.lexer import Lexer
 from lark.visitors import Transformer
 
-
-class Tree(Protocol):
-    pass
-
-
-class InteractiveParse(Protocol):
-    parse: str
+from .validator import ErrorHandler
+from .tree import Tree
 
 
-class ErrorHandler(Protocol):
-    errors: dict[str, str]
-
-    def run(self, error) -> bool:
-        """Runs the error handler on an individual token and checks how to respond to error"""
-        raise NotImplementedError
+# class InteractiveParse(Protocol):
+#     parse: str
 
 
 class Parser:
@@ -31,6 +22,7 @@ class Parser:
     lexer: Lexer
     error_handler: Optional[ErrorHandler]
     transformer: Optional[Transformer]
+    start: str
     strict: bool
     lalr: bool
     debug: bool
@@ -41,12 +33,13 @@ class Parser:
         tree_class: Optional[Tree] = None,
         error_handler: Optional[ErrorHandler] = None,
         transformer: Optional[Transformer] = None,
-        start: str = "term",
+        start: str = "start",
         strict: bool = True,
         debug: bool = True,
         lalr: bool = True,
         cache: bool = True,
     ) -> None:
+        self.start = start
         self.strict = strict
         self.debug = debug
         self.lalr = lalr
@@ -65,6 +58,7 @@ class Parser:
             strict=self.strict,
             debug=self.debug,
             propagate_positions=True,
+            maybe_placeholders=False,
             regex=True,
             transformer=inline_transformer,
             tree_class=tree_class,

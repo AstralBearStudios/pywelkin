@@ -3,23 +3,24 @@
 // TODO: figure out the best way to resolve ambiguities in this file! Without that, it will be hard
 // to determine the final version of the standard grammar!
 
-start: term*
-term: rule | attribute
-        | graph | connection
-        | list | tuple | operator
-        | unit
-rule: "=>"
-attribute: "@import" string -> import
-| "@file" string -> file
-| "@interfack" graph -> interface // For arbitrary scripts
-operator: term tuple | term tuple term
-list: "[" _series{term} "]"
-tuple: "(" _series{term} ")"
-_series{x}: x ("," x) (",")?
+terms: term*
+term: "@" directive
+        | construct | member
+attribute: "import" string -> import
+        | "file" string -> file
+directive: "import" tuple -> import
+construct: graph //tuple | list | series | graph //all_terms | graph
+operation: term tuple | term tuple term
+list: "[" series "]"
+tuple: "(" series ")"
+all_terms: "*"
+series: term ("," term)
 
 %import .base.graph -> graph
-%import .base.connection -> connection
+%import .base.connections -> connections
+%import .base.member-> member
 %import .base.unit-> unit
+%extend unit: "*"
 %import .base.string-> string
 %import common.WS
 %ignore WS

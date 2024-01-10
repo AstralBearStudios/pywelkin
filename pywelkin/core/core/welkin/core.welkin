@@ -1,0 +1,10 @@
+@import(welkin)
+
+@system(pywelkin.core {
+
+
+
+
+},
+inputs=text
+outputs=_)

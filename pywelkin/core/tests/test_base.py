@@ -1,23 +1,57 @@
-# SPDX-FileCopyrightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
-# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+#  SPDX-FileCopyrightText: 2024 Oscar Bender-Stone <oscarbenderstone@gmail.com>
+#  SPDX-License-Identifier: Apache-2.0 WITH LLVM Exception
+
+import pytest
+from typing import List
+from core.base import Base
+
+base: Base = Base(strict=True)
+
+# Possible user inputs
+# Fairly random for wider test coverage
+user_inputs = {
+    # Basic tests with only one or two levels of nesting
+    # All vertex names are intentionally abstract
+    # "B A.B.C { B C { D E { F G H } } }"
+    # "_{ A, B, C, D, E G, H --> D }"
+    # "A := B, D --> B --> C"
+    "A --> B --> C --> D",
+    "A { D := B { C } }"
+    # "_{ A.B  C := D  D --> _{ 'Text' }}",
+    # "_{ A <-- _{ B C }}",
+    # "_{ ...A.B#0.3, C#1 -- B#2 }",
+    # "_{ B --> D  A.B --> C}"
+    # More involved examples that mirror quick notes
+    # "house { family { mom dad me } pets { dog cat } }"
+    # """story {
+    #     'Tortoise and the Hare'
+    #     characters {
+    #         T := Tortoise,
+    #         H := Hare
+    #     }
+    #     plot {
+    #         characters.T  - beats -> characters.H
+    #     }
+    # } """,
+    # " ",
+    # " ",
+}
 
 
-from core.base import Recorder
+@pytest.mark.parametrize("user_input", user_inputs)
+class TestBase:
+    """Test functionality for Base Welkin, specifically with:
+    - Parsing
+    - Recording
+    """
 
-# Expected parse: Graph[A], Graph[Connection[A, B]], Graph[Connection[A, B], Connection[B, C], Connection[D, E]]
+    user_inputs: List[str]
 
-recorder = Recorder(strict=True)
+    def test_user_input_trees(self, user_input):  # , user_inputs):
+        print(base.parser.parse(user_input))
+        # for text in user_inputs:
 
-
-def test_input_trees():
-    inputs = [
-        '{ 2, 3, A { "Description about A" }}',
-        "{ A --> {B C} D D {} }",
-        "{ A -- B -- C  D -- E }",
-    ]
-    for input in inputs:
-        print(recorder.parser.parse(input))
-
-
-test_input_trees()
-(
+    # def test_user_input_graphs(self):
+    #     return False
+    # def test_input_encoding(self):
+    #     return False

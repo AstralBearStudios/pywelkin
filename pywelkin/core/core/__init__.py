@@ -13,9 +13,9 @@
 # - Figure out how to best bootstrap new features (e.g., direct interface to the operating system)
 
 
-from .standard import Interpreter
-from .base import Recorder
+from .attribute import Attributor
+from .base import Base
 
 from .parser import Parser
 
-__all__ = ["Parser", "Interpreter", "Recorder"]
+__all__ = ["Parser", "Attributor", "Base"]
