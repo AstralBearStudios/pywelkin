@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "gui"
+version = "0.3.0"
+description = "GUI runtime and MVC base for PyWelkin"
+authors = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+maintainers = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+license = "LGPL-3.0-or-later"
+readme = "README.org"
+repository = "https://github.com/astral-bear/pywelkin/pywelkin/gui"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.12.2"
+pyside6-essentials = "^6.5.2"
+core = {path = "../core", develop = true}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

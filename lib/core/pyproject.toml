@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "core"
+version = "0.7.0"
+description = "Core parsing and graph library for PyWelkin"
+
+authors = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+maintainers = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+license = "Apache-2.0 with LLVM-Exception"
+readme = "README.md"
+repository = "https://github.com/astral-bear/pywelkin"
+keywords = ["graph", "parser", "codecs", "organizer", "library"]
+
+[tool.poetry.dependencies]
+python = ">=3.9, <3.12.2"
+lark = "^1.1.9"
+interegular = "^0.3.2"
+mypy = "^1.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

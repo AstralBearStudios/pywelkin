@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "console"
+version = "0.1.0"
+description = "Console tool for the pywelkin core library."
+authors = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+maintainers = [
+    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
+]
+license = "Apache-2.0"
+readme = "README.org"
+repository = "https://github.com/astral-bear/pywelkin/cli"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.12.2"
+typer = "^0.9.0"
+core = {path = "../../lib/core", develop = true}
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

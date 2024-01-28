@@ -1,0 +1,14 @@
+#  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
+STRING: "\"" _STRING_ESC_INNER "\"" | "'" _STRING_ESC_INNER "'"
+# Regex for whitespace inserted directly
+# (Currently cannot put a terminal into a regex in lark)
+# Also excludes quotes and underscore
+# WHITE_SPACE is ignored in all standard grammars
+IDENT: /[^ \t\f\r\n'".,#{}:;=]/+
+NUMBERS: NUMBER
+# Defined for clarity; identical to common.WS
+WHITE_SPACE: /[ \t\f\r\n]/+
+
+%import common.NUMBER -> NUMBER
+%import common._STRING_ESC_INNER -> _STRING_ESC_INNER

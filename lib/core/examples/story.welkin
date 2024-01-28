@@ -1,0 +1,16 @@
+plot {
+
+     hare {
+          sleeps -> stop
+     }
+
+     tortoise {
+         keeps_going -> doesn't_stop
+     }
+
+
+     tortoise --beats-> hare
+                 |
+            reason { hare -> sleeps }
+
+}
