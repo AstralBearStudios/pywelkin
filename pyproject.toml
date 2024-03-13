@@ -2,39 +2,23 @@
 name = "pywelkin"
 version = "0.3.0"
 description = "Python implementaiton of Welkin, a personal information manager."
-authors = [
-    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
-]
-maintainers = [
-    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
-]
+authors = ["Oscar Bender-Stone <oscarbenderstone@gmail.com>"]
+maintainers = ["Oscar Bender-Stone <oscarbenderstone@gmail.com>"]
 license = "LGPL-3.0-or-later"
 readme = "README.md"
 repository = "https://github.com/AstralBearStudios/pywelkin"
 keywords = ["graph", "organizer"]
-packages = [
-    {include = "core", from = "lib"},
-]
+packages = [{ include = "core", from = "." }]
 
 [tool.poetry.dependencies]
-python = ">=3.9, <3.12.2"
-console = {path = "./apps/console", optional = true}
-desktop = {path = "./apps/desktop", optional = true}
-android = {path = "./apps/android", optional = true}
-ios = {path = "./apps/ios", optional = true}
+python = ">=3.9, <3.12.3"
 black = "^24.1.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^6.0.0"
 pytest-mock = "*"
-sphinx = {version = "^7.2.6"}
+sphinx = { version = "^7.2.6" }
 furo = "^2023.9.10"
-
-[tool.poetry.extras]
-console = ["console"]
-desktop = ["desktop"]
-android = ["android"]
-ios = ["ios"]
 
 [build-system]
 requires = ["poetry-core"]

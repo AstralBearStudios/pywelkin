@@ -1,5 +1,7 @@
 ️⚠ **Warning: This repository is a WIP. This project is in its early stages and is not in its alpha release. Please wait to submit any issues, and stay tuned for updates.**
 
+**Update March 13, 2024: as a late edition to the February udpate in [Welkin](https://github.com/astral-bear/welkin), the scope of this project is being significantly reduced. PyWelkin will only be a core library. It does provide more support beyond the standard, but it does require some concepts from the Vero spec (TBD).**
+
 Welcome to PyWelkin, the official python implementation of [Welkin](https://github.com/astral-bear/welkin). This package consists of six different subpackages.
 
 #Installation

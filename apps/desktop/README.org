@@ -1,9 +1,0 @@
-#+title: pywelkin.desktop
-#+author: Oscar Bender-Stone
-#+startup: nofold
-
-This provides a desktop application for Welkin.
-
-* License
-
-This subpackage is licensed under: SPDX-LGPL-3.0.-or-later.
