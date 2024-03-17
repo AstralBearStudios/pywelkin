@@ -4,7 +4,7 @@ from typing import Self, TypeVar, Generic, Iterable, Optional
 
 import pprint
 
-from .utils import NestedDict
+from .containers import NestedDict
 
 T = TypeVar("T")
 

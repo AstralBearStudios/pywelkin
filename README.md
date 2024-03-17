@@ -6,6 +6,7 @@ Welcome to PyWelkin, the official python implementation of [Welkin](https://gith
 - Parsing Welkin and any Context Free Grammar
 - Storing Information Graphs in memory and on disk 
 - Generating canonical strings
+
 Analyzing graphs in python will be a separate extension (TBD).
 
 Many projects for AstralBearStudios will be bootstrapped using pywelkin. These include:
@@ -16,10 +17,10 @@ Many projects for AstralBearStudios will be bootstrapped using pywelkin. These i
 
 
 Dependencies are kept to a minimum. The following will not change, because of how well they are developed, and the
-relatively short lifespan
+relatively short lifespan of pywelkin.
 
-- lark: parsing engine that includes Unicode and AST support builtin. Absolutely essential for standard and user created
-  grammars
+- lark: parsing engine that includes Unicode and AST support builtin. Absolutely essential for Welkin and custom 
+  grammars.
 
 # Credits
 

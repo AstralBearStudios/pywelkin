@@ -17,7 +17,7 @@ from .graph import (
 from .tree import Tree
 from .exceptions import NameCollisionError
 from .validator import SemanticsValidator, SyntaxValidator
-from .utils import NestedDict
+from .containers import NestedDict
 
 from dataclasses import dataclass
 

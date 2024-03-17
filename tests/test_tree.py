@@ -1,8 +1,8 @@
 #  SPDX-License-Identifier: Apache-2.0 WITH LLVM Exception
 
-# Make sure overarrching tree properties work; see lark/tests/test_tree.py
+# Make sure overarching tree properties work; see lark/tests/test_tree.py
 
-from lib.core import Tree
+from core import Tree
 
 
 def test_operations():
