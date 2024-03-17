@@ -15,6 +15,9 @@ python = ">=3.9, <3.12.3"
 lark = "^1.1.9"
 interegular = "^0.3.3"
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.1"
+black = "^24.3.0"
 sphinx = { version = "^7.2.6" }
 furo = "^2023.9.10"
 
