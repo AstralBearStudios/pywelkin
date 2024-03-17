@@ -1,9 +1,0 @@
-#+title: pywelkin.android
-#+author: Oscar Bender-Stone
-#+startup: nofold
-
-This provides an android application for Welkin, with customizations for phones and tablets.
-
-* License
-
-This subpackage is licensed under: SPDX-LGPL-3.0-or-later.

@@ -1,13 +1,31 @@
 ️⚠ **Warning: This repository is a WIP. This project is in its early stages and is not in its alpha release. Please wait to submit any issues, and stay tuned for updates.**
 
-Welcome to PyWelkin, the official python implementation of [Welkin](https://github.com/astral-bear/welkin). This package consists of six different subpackages.
+**Update March 13, 2024: as a late edition to the February update in [Welkin](https://github.com/astral-bear/welkin), the scope of this project is being significantly reduced. PyWelkin will only be a core library. It does provide more support beyond the standard, but it does require some concepts from the Vero spec (TBD).**
 
-#Installation
-  /Pip/pipx/poetry instructions: TBD/
-- Note: this installation should come with an option to not install images (for space or other reasons).
+Welcome to PyWelkin, the official python implementation of [Welkin](https://github.com/astral-bear/welkin). This is a library for:
+- Parsing Welkin and any Context Free Grammar
+- Storing Information Graphs in memory and on disk 
+- Generating canonical strings
+Analyzing graphs in python will be a separate extension (TBD).
 
-#License
+Many projects for AstralBearStudios will be bootstrapped using pywelkin. These include:
+- Vero (Finitary Mathematical Basis): TBD
+- Grove (Welkin Package Manager): TBD
+- Pruvi (Unified Proof Assistant): TBD
+- Stratus (Assembly + OS Spec): TBD
+
+# Installation
+  - Pip: TBD
+  - Poetry: clone the repository first.
+  ```bash
+    git clone https://github.com/AstralBearStudios/pywelkin
+  ```
+    Then install with poetry.
+  ```bash
+    cd pywelkin && poetry install
+  ```
+
+# License
   Copyright (c) 2023, Oscar Bender-Stone and the PyWelkin contributors.
-  This package has two licenses in its subpackages:
-- Apache 2.0 WITH LLVM-exceptions: lib/core, apps/console
-- LGPL-3.0-or-later: lib/gui, apps/desktop, apps/android, apps/ios
+
+  This package is licensed under the Apache-2.0 License with LLVM Exceptions.

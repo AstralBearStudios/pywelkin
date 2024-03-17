@@ -9,14 +9,9 @@ TODO: Determine Full Contributing Guidelines
 
 ## Installing
 - Setup a python virtual environment using your favorite tool.
-  - Current python version: 3.12.
+  - Minimum python version: 3.6.
 - Make sure to git clone from the main branch
-- You can either use 
 - To install a specific package ...
-  - *Warning:* pywelkin is a [namespace package](), which means it contains its own packages.
-    To run the tests, make sure that ALL
-
-
 
 
 ## Testing

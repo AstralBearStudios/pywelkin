@@ -1,40 +1,26 @@
 [tool.poetry]
 name = "pywelkin"
-version = "0.3.0"
-description = "Python implementaiton of Welkin, a personal information manager."
-authors = [
-    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
-]
-maintainers = [
-    "Oscar Bender-Stone <oscarbenderstone@gmail.com>",
-]
-license = "LGPL-3.0-or-later"
+version = "0.4.0"
+description = "Core python library for Welkin, a universal information format."
+authors = ["Oscar Bender-Stone <oscarbenderstone@gmail.com>"]
+maintainers = ["Oscar Bender-Stone <oscarbenderstone@gmail.com>"]
+license = "Apache-2.0-WITH-LLVM-Exception"
 readme = "README.md"
 repository = "https://github.com/AstralBearStudios/pywelkin"
 keywords = ["graph", "organizer"]
-packages = [
-    {include = "core", from = "lib"},
-]
+packages = [{ include = "core" }]
 
 [tool.poetry.dependencies]
-python = ">=3.9, <3.12.2"
-console = {path = "./apps/console", optional = true}
-desktop = {path = "./apps/desktop", optional = true}
-android = {path = "./apps/android", optional = true}
-ios = {path = "./apps/ios", optional = true}
-black = "^24.1.1"
+python = ">=3.9, <3.12.3"
+lark = "^1.1.9"
+interegular = "^0.3.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^6.0.0"
 pytest-mock = "*"
-sphinx = {version = "^7.2.6"}
+black = "^24.1.1"
+sphinx = { version = "^7.2.6" }
 furo = "^2023.9.10"
-
-[tool.poetry.extras]
-console = ["console"]
-desktop = ["desktop"]
-android = ["android"]
-ios = ["ios"]
 
 [build-system]
 requires = ["poetry-core"]

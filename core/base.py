@@ -26,7 +26,7 @@ class Base:
 
     def __init__(self, strict: bool = True, debug: bool = True):
         self.parser = Parser(
-            grammar="grammars/base.lark",
+            grammar="grammars/welkin.lark",
             strict=strict,
             debug=debug,
             transformer=ast_utils.create_transformer(ast_module),

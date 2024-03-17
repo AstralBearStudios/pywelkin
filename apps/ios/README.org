@@ -1,9 +1,0 @@
-#+title: pywelkin.ios
-#+author: Oscar Bender-Stone
-#+startup: nofold
-
-This provides an iOS application for Welkin, with specific customizations for phones and tablets.
-
-* License
-
-This subpackage is licensed under: SPDX-LGPL-3.0-or-later.
