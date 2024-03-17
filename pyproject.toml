@@ -1,6 +1,5 @@
 [tool.poetry]
 name = "pywelkin"
-<<<<<<< HEAD
 version = "0.4.0"
 description = "Core python library for Welkin, a universal information format."
 authors = ["Oscar Bender-Stone <oscarbenderstone@gmail.com>"]
@@ -15,29 +14,7 @@ packages = [{ include = "core" }]
 python = ">=3.9, <3.12.3"
 lark = "^1.1.9"
 interegular = "^0.3.3"
-=======
-version = "0.3.0"
-description = "Python implementaiton of Welkin, a personal information manager."
-authors = ["Oscar Bender-Stone <oscarbenderstone@gmail.com>"]
-maintainers = ["Oscar Bender-Stone <oscarbenderstone@gmail.com>"]
-license = "LGPL-3.0-or-later"
-readme = "README.md"
-repository = "https://github.com/AstralBearStudios/pywelkin"
-keywords = ["graph", "organizer"]
-packages = [{ include = "core", from = "." }]
 
-[tool.poetry.dependencies]
-python = ">=3.9, <3.12.3"
-black = "^24.1.1"
->>>>>>> main
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^6.0.0"
-pytest-mock = "*"
-<<<<<<< HEAD
-black = "^24.1.1"
-=======
->>>>>>> main
 sphinx = { version = "^7.2.6" }
 furo = "^2023.9.10"
 
