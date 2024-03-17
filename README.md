@@ -14,13 +14,27 @@ Many projects for AstralBearStudios will be bootstrapped using pywelkin. These i
 - Pruvi (Unified Proof Assistant): TBD
 - Stratus (Assembly + OS Spec): TBD
 
+
+Dependencies are kept to a minimum. The following will not change, because of how well they are developed, and the
+relatively short lifespan
+
+- lark: parsing engine that includes Unicode and AST support builtin. Absolutely essential for standard and user created
+  grammars
+
+# Credits
+
+- lark: Erez Sheran and All Contributors. All of the Github issues were quite insightful, and you all have made a fantastic package!
+
+
 # Installation
   - Pip: TBD
   - Poetry: clone the repository first.
   ```bash
     git clone https://github.com/AstralBearStudios/pywelkin
   ```
+
     Then install with poetry.
+
   ```bash
     cd pywelkin && poetry install
   ```
@@ -28,4 +42,4 @@ Many projects for AstralBearStudios will be bootstrapped using pywelkin. These i
 # License
   Copyright (c) 2023, Oscar Bender-Stone and the PyWelkin contributors.
 
-  This package is licensed under the Apache-2.0 License with LLVM Exceptions.
+  This package is licensed under: SPDX-Apache-2.0-WITH-LLVM-exception.
