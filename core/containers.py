@@ -1,11 +1,15 @@
 #  SPDX-License-Identifier: Apache-2.0 WITH LLVM Exception
 import itertools
-from typing import Iterable
+from typing import Generic, Iterable, TypeVar, Optional
 
 
 class NestedDict(dict):
     """Nested dictionary of arbitrary depth.
     Each leaf is an empty :class NestedDict:.
+
+    Any method with a parameter :param keys:
+    takes in an iterable. Takes in
+    non-iterable as a singleton.
     """
 
     def __init__(self, *args, **kwargs):
@@ -28,3 +32,30 @@ class NestedDict(dict):
         iterator = itertools.chain(keys, value)
         for node in iterator:
             head = head.setdefault(node, {})
+
+
+RootType = TypeVar("RootType")
+MappedValueType = TypeVar("MappedValueType")
+
+
+class RootedMapping:
+    """Mapping with a special, external element :param root:."""
+
+    root: RootType
+
+    map: dict[int, MappedValueType] = {}
+
+    def __init__(
+        self, root: Optional[RootType], map: Optional[dict[int, MappedValueType]]
+    ):
+        self.root = root
+        self.map = map
+
+    def __getitem(self, index: int):
+        if index == 0:
+            return self.root
+        else:
+            return self.map.setdefault(index, None)
+
+
+Node = TypeVar("Node")
