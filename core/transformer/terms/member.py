@@ -33,20 +33,18 @@ class Parser:
 
     @classmethod
     def from_str(cls, member_str: str) -> tuple:
-        layers_up = 0
+        if not member_str:
+            return 0, None, ""
 
-        while member_str[0] == ".":
-            layers_up += 1
-            member_str = member_str[1:]
+        # Check for relative member
+        absolute_member_str = member_str.lstrip(".")
 
-        path_list: list[str] = member_str.split(".")
+        layers_up = len(member_str) - len(absolute_member_str)
 
-        # print(path_list)
+        path_list: list[str] = absolute_member_str.split(".")
 
         path_list = [float(item[1:]) if item[0] == "#" else item for item in path_list]
 
-        value = path_list.pop()
+        path = Path(path_list)
 
-        path = Tree.from_list(path_list) if path_list else None
-
-        return layers_up, path, value
+        return layers_up, path
