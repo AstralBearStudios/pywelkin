@@ -157,3 +157,26 @@ class Tree(Generic[Node]):
 
     def __repr__(self):
         return "Tree(root=" + str(self.root) + ", branches=" + str(self.branches) + ")"
+
+
+class Path(Tree[Node]):
+    """A :class Tree: with a single branch and
+    designated leaf :param value:."""
+
+    value: Node
+
+    def __init__(self, lst: list[Node]):
+        root = lst[0]
+        path = lst[1:-1]
+        leaf = lst[-1]
+
+        branches = NestedDict()
+
+        # lst may only contain a root,
+        # so path will be empty
+        if leaf:
+            branches[path] = leaf
+            self.value = leaf
+
+        self.root = root
+        self.branches = branches
