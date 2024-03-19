@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pywelkin"
-version = "0.4.0"
+version = "0.5.0"
 description = "Core python library for Welkin, a universal information format."
 authors = ["Oscar Bender-Stone <oscarbenderstone@gmail.com>"]
 maintainers = ["Oscar Bender-Stone <oscarbenderstone@gmail.com>"]
@@ -8,19 +8,43 @@ license = "Apache-2.0-WITH-LLVM-Exception"
 readme = "README.md"
 repository = "https://github.com/AstralBearStudios/pywelkin"
 keywords = ["graph", "organizer"]
-packages = [{ include = "core" }]
 
 [tool.poetry.dependencies]
 python = ">=3.9, <3.12.3"
 lark = "^1.1.9"
 interegular = "^0.3.3"
+coloredlogs = "^15.0.1"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.1.1"
-black = "^24.3.0"
-sphinx = { version = "^7.2.6" }
-furo = "^2023.9.10"
+black = "*"
+isort = "*"
+autoflake = "*"
+sphinx = "*"
+furo = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+pytest-timeout = "*"
+pytest-xdist = "*"
+pyupgrade = "*"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.autoflake]
+recursive = true
+expand-star-imports = true
+remove-all-unused-imports = true
+remove-duplicate-keys = true
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.black]
+line-length = 120
+skip-string-normalization = true
+
+# [tool.mypy]
+# disallow_untyped_defs = true

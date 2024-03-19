@@ -4,7 +4,7 @@ import collections.abc
 # from typing import List, Union, TypeVar, Tuple
 
 import sys
-from typing import Self, Union, Optional, TypeVar, Generic
+from typing import Self, Union, Optional, TypeAlias, TypeVar, Generic
 from dataclasses import dataclass
 
 from lark.ast_utils import Ast, AstList
@@ -18,7 +18,7 @@ from .graph import (
     LabelMap,
 )
 
-from ...terms import member
+from terms import member
 
 
 ast_module = sys.modules[__name__]
@@ -63,7 +63,7 @@ class Connections(Ast, AstList):
     Raises:
         :class NameCollision: when connections are repeated in a row.
         For example, "A --> A --> A" is invalid, because
-        the connection "A --> A" is repeated twice
+        the connection "A --> A" is repeated twice.
     """
 
     labels: set[Label] = set()
@@ -132,7 +132,7 @@ FlatItem: TypeAlias = Union[Member, "Graph", Alias, Connections]
 Item: TypeAlias = FlatItem | Series
 
 
-class Graph(_Ast, ast_utils.AsList):
+class Graph(Ast, AstList):
     label_map: LabelMap = LabelMap()
     label_tree: Tree[Label]
     connections: dict[Label, dict[Label, list[Label]]] = {}

@@ -1,12 +1,15 @@
 #  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
-from typing import Protocol, Optional, Dict, Callable
+from typing import Optional
 
-from lark import Lark, Token, Transformer
+from lark import Lark, Transformer
 from lark.lexer import Lexer
 
-from .validator import ErrorHandler
 from .tree import Tree
+
+
+class ErrorHandler:
+    pass
 
 
 class Parser:

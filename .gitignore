@@ -6,6 +6,7 @@ build/
 source/
 
 *.py[cod]
+.pytest_cache/
 *.egg
 build
 htmlcov
