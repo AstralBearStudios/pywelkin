@@ -50,12 +50,6 @@ class Member(Ast, member.Base):
         super().__init__(layers_up, path, value)
 
 
-class Vertex:
-    """Used for typing purposes. Represents 'Member | Graph'."""
-
-    pass
-
-
 @dataclass
 class Series(Ast):
     """Puts terms into a list :param lst."""
@@ -84,46 +78,6 @@ class Connections(Ast, AstList):
 
             connections = connections[2:]
 
-    def add_arrow(self, initial, connector, final):
-        try:
-            added_connector_set = connector.value
-        except AttributeError:
-            added_connector_set = set()
-
-        # if not self.arcs[initial][final].isdisjoint(added_connector_set):
-        #     raise NameCollisionError((initial, connector, final))
-
-        self.arcs.setdefault(initial, {}).setdefault(final, set()).union(
-            added_connector_set
-        )
-
-    def add_connection(self, connection):
-        initial, connector, final = connection
-
-        self.labels.union((initial.value, final.value))
-
-        if connector.value:
-            self.labels.update(connector.value)
-
-        try:
-            added_connector_set = connector.value
-        except AttributeError:
-            added_connector_set = set()
-
-        # Edge case: if initial = final, just make it a left arrow
-        # This avoids duplicate dictionary assignments
-        if initial == final:
-            connector.kind = ArcKinds.left_arrow
-
-        match connector.kind:
-            case ArcKinds.left_arrow:
-                self.add_arrow(final, connector.value, initial)
-            case ArcKinds.right_arrow:
-                self.add_arrow(initial, connector.value, final)
-            case ArcKinds.edge:
-                self.add_arrow(final, connector.value, initial)
-                self.add_arrow(initial, connector.value, final)
-
     def __repr__(self):
         return (
             "Connections(labels="
@@ -141,7 +95,7 @@ class Connections(Ast, AstList):
 # Because of relative imports upwards, this means
 # we have to store aliases as pairs
 # THAT's why we want validation
-class Alias(_Ast):
+class Alias(Ast):
     labels: set[Label] = set()
     aliases: dict[Label, Label]
     original: Label
