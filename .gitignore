@@ -2,9 +2,10 @@
 .idea
 *.log
 tmp/
+build/
+source/
 
 *.py[cod]
 *.egg
 build
 htmlcov
-/.pywelkin/core/.experiments
