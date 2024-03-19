@@ -4,71 +4,37 @@ import collections.abc
 # from typing import List, Union, TypeVar, Tuple
 
 import sys
-from typing import Self, Union, Optional, TypeVar, TypeAlias, Generic
+from typing import Self, Union, Optional, TypeVar, Generic
 from enum import Enum
-from collections import defaultdict
-from lark import ast_utils, Token  # v_args, Token
-from .exceptions import NameCollisionError, ArgumentError
+from dataclasses import dataclass
+
+from lark.ast_utils import Ast, AstList
+
+from .containers import NestedDict
+from .exceptions import NameCollisionError
+from .tree import Tree
 from .graph import (
-    InformationGraph,
+    # InformationGraph,
     Label,
     LabelMap,
 )
-from .tree import Tree
-from .exceptions import NameCollisionError
-from .validator import SemanticsValidator, SyntaxValidator
-from .containers import NestedDict
 
-from dataclasses import dataclass
+from ...terms import member
+
 
 ast_module = sys.modules[__name__]
 
-
-class _Ast(ast_utils.Ast):
-    # Underscores mean ast_utils.Ast should skip this class
-    pass
-
-
-@dataclass
-class _BaseMember:
-    """Base class for Member with key parameters"""
-
-    layers_up: int
-    path: tuple[Label]
-    value: Label
-
-    def __hash__(self):
-        return hash((self.layers_up, self.path, self.value))
+# Base Pipeline
+# Gather --> Order --> Format/Propagate --> Combine --> Toplevel Validation
+# 1. Gather information needed from each token into temporary forms
+# - Validate as much as possible with local information
+# 2. Order terms based on max_layers_up
+# 3. Work with all terms
+# 4. Combine all terms in a graph
+# 5. Validate toplevel: check there are no members with non-zero layers_up
 
 
-class _ParseMember:
-    """Parses the result from a member string.
-    Temporarily added until alternative solution is found for
-    transforming concatenated terminals in lark.
-    """
-
-    @classmethod
-    def from_str(cls, member_str: str) -> tuple:
-        layers_up = 0
-
-        while member_str[0] == ".":
-            layers_up += 1
-            member_str = member_str[1:]
-
-        path_list: list[str] = member_str.split(".")
-
-        # print(path_list)
-
-        path_list = [float(item[1:]) if item[0] == "#" else item for item in path_list]
-
-        value = path_list.pop()
-
-        path = Tree.from_list(path_list) if path_list else None
-
-        return layers_up, path, value
-
-
-class Member(_Ast, _BaseMember):
+class Member(Ast, member.Base):
     """Class for member rule, which converts any terminals (as lists
     or strings) into the appropriate parameters.
 
@@ -79,14 +45,14 @@ class Member(_Ast, _BaseMember):
     """
 
     def __init__(self, member_str):
-        member_data = _ParseMember.from_str(member_str)
+        member_data = member.Parser.from_str(member_str)
         layers_up, path, value = member_data
 
         super().__init__(layers_up, path, value)
 
 
 @dataclass
-class Series(_Ast, ast_utils.AsList):
+class Series(Ast, AstList):
     list: list
 
 
@@ -96,7 +62,7 @@ class ArcKinds(Enum):
     right_arrow = 2
 
 
-class _Connector(_Ast):
+class _Connector(Ast):
     """Parsed representation of connectors.
     Parameters:
         kind: a value from :class ArcKinds:
