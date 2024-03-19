@@ -6,6 +6,9 @@ from ...containers import Tree, Path
 from ...graph import Label
 
 
+# TODO: add support for general encodings
+
+
 @dataclass
 class LabelTree:
     """Base class for adding :param labeltree:.

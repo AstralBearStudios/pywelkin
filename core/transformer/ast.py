@@ -5,7 +5,6 @@ import collections.abc
 
 import sys
 from typing import Self, Union, Optional, TypeVar, Generic
-from enum import Enum
 from dataclasses import dataclass
 
 from lark.ast_utils import Ast, AstList
@@ -51,54 +50,20 @@ class Member(Ast, member.Base):
         super().__init__(layers_up, path, value)
 
 
+class Vertex:
+    """Used for typing purposes. Represents 'Member | Graph'."""
+
+    pass
+
+
 @dataclass
-class Series(Ast, AstList):
-    list: list
+class Series(Ast):
+    """Puts terms into a list :param lst."""
+
+    lst: list
 
 
-class ArcKinds(Enum):
-    edge = 0
-    left_arrow = 1
-    right_arrow = 2
-
-
-class _Connector(Ast):
-    """Parsed representation of connectors.
-    Parameters:
-        kind: a value from :class ArcKinds:
-        value: the corresponding :class Member:
-    """
-
-    kind: ArcKinds
-    value: Member
-
-    def __init__(self, *args):
-        self.value = args[0] if args else None
-
-    def __repr__(self):
-        return (
-            self.__class__.__name__
-            + "(kind="
-            + self.kind.__repr__()
-            + ", value="
-            + self.value.__repr__()
-            + ")"
-        )
-
-
-class Edge(_Connector):
-    kind = ArcKinds.edge
-
-
-class RightArrow(_Connector):
-    kind = ArcKinds.right_arrow
-
-
-class LeftArrow(_Connector):
-    kind = ArcKinds.left_arrow
-
-
-class Connections(_Ast, ast_utils.AsList):
+class Connections(Ast, AstList):
     """Connections rule in grammars/base.lark.
 
     Raises:
