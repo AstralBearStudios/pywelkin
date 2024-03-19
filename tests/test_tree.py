@@ -2,7 +2,7 @@
 
 # Make sure overarching tree properties work; see lark/tests/test_tree.py
 
-from core import Tree
+from containers import Tree
 
 
 def test_operations():

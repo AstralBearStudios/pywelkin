@@ -1,8 +1,8 @@
-#  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+#  SPDX-License-Identifier: Apache-2.0 WITH LLVM Exception
 
 import pytest
 from typing import List
-from core import Base
+from pywelkin import Base
 
 base: Base = Base(strict=True)
 

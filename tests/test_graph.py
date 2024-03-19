@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM Exception
 # Test graph data structure (InformationGraph) and related methods
 
 
