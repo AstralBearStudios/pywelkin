@@ -1,4 +1,3 @@
-# SPDX-FileCopyrightText: 2023 Oscar Bender-Stone <oscarbenderstone@gmail.com>
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 # Largely a work in progress; this should mirror a welkin file with basic bullet points. This could eventually become a markdown-type file as well, but for very simple note taking, this could solely be for a hierarchical structure. This would also mean that most of its contents are strings, but I think that would work.
 

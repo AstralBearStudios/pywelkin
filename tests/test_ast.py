@@ -1,4 +1,4 @@
-#  SPDX-License-Identifier: Apache-2.0 WITH LLVM Exception
+#  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
 import pytest
 from typing import List

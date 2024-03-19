@@ -1,10 +1,8 @@
-#  SPDX-License-Identifier: Apache-2.0 WITH LLVM Exception
+#  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 import logging
-import itertools
-from typing import TypeAlias, TypeVar, Iterable
 from logging import Logger
-from collections import defaultdict
 
-logger: Logger = logging.getLogger("pywelkin.core")
-logger.addHandler(logging.StreamHandler())
-logger.setLevel(logging.CRITICAL)
+logger: Logger = logging.getLogger(__name__)
+logger.basicConfig()
+# logger.addHandler(logging.StreamHandler())
+# logger.setLevel(logging.CRITICAL)

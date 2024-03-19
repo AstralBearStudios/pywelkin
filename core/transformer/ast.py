@@ -1,4 +1,4 @@
-#  SPDX-License-Identifier: Apache-2.0 WITH LLVM Exception
+#  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 import collections.abc
 
 # from typing import List, Union, TypeVar, Tuple

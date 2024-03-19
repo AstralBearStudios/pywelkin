@@ -1,4 +1,4 @@
-#  SPDX-License-Identifier: Apache-2.0 WITH LLVM Exception
+#  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
 # TODO: separate pywelkin from welkin error handling
 # Only error handling in welkin: Validator

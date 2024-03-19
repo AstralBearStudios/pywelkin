@@ -1,4 +1,4 @@
-#  SPDX-License-Identifier: Apache-2.0 WITH LLVM Exception
+#  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 import itertools
 from typing import Generic, Iterable, TypeVar, Optional, Self
 

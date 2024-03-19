@@ -1,4 +1,4 @@
-#  SPDX-License-Identifier: Apache-2.0 WITH LLVM Exception
+#  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
 from lark import ast_utils
 from .parser import Parser
