@@ -1,6 +1,6 @@
 #  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
-from dattaclasses import dataclass
+from dataclasses import dataclass
 
 from ...containers import Tree, Path
 from ...graph import Label

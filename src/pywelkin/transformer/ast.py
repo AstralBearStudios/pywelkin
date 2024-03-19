@@ -7,18 +7,17 @@ import sys
 from typing import Self, Union, Optional, TypeAlias, TypeVar, Generic
 from dataclasses import dataclass
 
-from lark.ast_utils import Ast, AstList
-
-from .containers import NestedDict
-from .exceptions import NameCollisionError
-from .tree import Tree
-from .graph import (
+from lark.ast_utils import Ast, AsList
+from lark.ast_utils import AsList
+from ..exceptions import NameCollisionError
+from ..tree import Tree
+from ..graph import (
     # InformationGraph,
     Label,
     LabelMap,
 )
 
-from terms import member
+from .terms import member
 
 
 ast_module = sys.modules[__name__]
@@ -57,7 +56,7 @@ class Series(Ast):
     lst: list
 
 
-class Connections(Ast, AstList):
+class Connections(Ast, AsList):
     """Connections rule in grammars/base.lark.
 
     Raises:
@@ -132,7 +131,7 @@ FlatItem: TypeAlias = Union[Member, "Graph", Alias, Connections]
 Item: TypeAlias = FlatItem | Series
 
 
-class Graph(Ast, AstList):
+class Graph(Ast, AsList):
     label_map: LabelMap = LabelMap()
     label_tree: Tree[Label]
     connections: dict[Label, dict[Label, list[Label]]] = {}

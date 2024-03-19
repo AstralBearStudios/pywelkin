@@ -2,7 +2,7 @@
 
 from lark import ast_utils
 from .parser import Parser
-from .ast import ast_module
+from .transformer.ast import ast_module
 
 
 class SemanticValidator:

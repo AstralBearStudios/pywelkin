@@ -2,7 +2,7 @@
 
 # Make sure overarching tree properties work; see lark/tests/test_tree.py
 
-from containers import Tree
+from pywelkin.containers import Tree
 
 
 def test_operations():
